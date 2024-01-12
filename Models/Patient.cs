@@ -8,24 +8,23 @@ namespace FinalProject.Models
         public Patient()
         {
             Appointment = new HashSet<Appointment>();
-            Billgen = new HashSet<Billgen>();
-            Diagno = new HashSet<Diagno>();
+            LabBillGeneration = new HashSet<LabBillGeneration>();
+            PrescriptionBill = new HashSet<PrescriptionBill>();
         }
 
-        public int PId { get; set; }
-        public int? RId { get; set; }
-        public string PName { get; set; }
-        public int? PAge { get; set; }
-        public string PGender { get; set; }
-        public DateTime? PDov { get; set; }
-        public string PDiag { get; set; }
-        public string PPres { get; set; }
-        public int? PPhno { get; set; }
-        public string PAddress { get; set; }
+        public int PatientId { get; set; }
+        public string RegisterNo { get; set; }
+        public string PatientName { get; set; }
+        public DateTime PatientDob { get; set; }
+        public string PatientAddr { get; set; }
+        public string Gender { get; set; }
+        public string BloodGroup { get; set; }
+        public long PhoneNumber { get; set; }
+        public string PatientEmail { get; set; }
+        public string PatientStatus { get; set; }
 
-        public virtual Recep R { get; set; }
         public virtual ICollection<Appointment> Appointment { get; set; }
-        public virtual ICollection<Billgen> Billgen { get; set; }
-        public virtual ICollection<Diagno> Diagno { get; set; }
+        public virtual ICollection<LabBillGeneration> LabBillGeneration { get; set; }
+        public virtual ICollection<PrescriptionBill> PrescriptionBill { get; set; }
     }
 }

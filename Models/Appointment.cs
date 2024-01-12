@@ -7,21 +7,26 @@ namespace FinalProject.Models
     {
         public Appointment()
         {
-            Billgen = new HashSet<Billgen>();
-            Diagno = new HashSet<Diagno>();
+            ConsultBill = new HashSet<ConsultBill>();
+            Diagnosis = new HashSet<Diagnosis>();
+            LabPresc = new HashSet<LabPresc>();
+            LabReportGeneration = new HashSet<LabReportGeneration>();
+            MedicinePresc = new HashSet<MedicinePresc>();
         }
 
-        public int AId { get; set; }
-        public int? PId { get; set; }
-        public int? DId { get; set; }
-        public DateTime? ADate { get; set; }
-        public string PReason { get; set; }
-        public string AStatus { get; set; }
-        public int? PPhno { get; set; }
+        public int AppointmentId { get; set; }
+        public int TokenNo { get; set; }
+        public DateTime AppointmentDate { get; set; }
+        public int PatientId { get; set; }
+        public int DoctorId { get; set; }
+        public string CheckUpStatus { get; set; }
 
-        public virtual Doc D { get; set; }
-        public virtual Patient P { get; set; }
-        public virtual ICollection<Billgen> Billgen { get; set; }
-        public virtual ICollection<Diagno> Diagno { get; set; }
+        public virtual Doctor Doctor { get; set; }
+        public virtual Patient Patient { get; set; }
+        public virtual ICollection<ConsultBill> ConsultBill { get; set; }
+        public virtual ICollection<Diagnosis> Diagnosis { get; set; }
+        public virtual ICollection<LabPresc> LabPresc { get; set; }
+        public virtual ICollection<LabReportGeneration> LabReportGeneration { get; set; }
+        public virtual ICollection<MedicinePresc> MedicinePresc { get; set; }
     }
 }
